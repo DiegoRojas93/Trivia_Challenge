@@ -14,7 +14,7 @@ module.exports = {
     assetModuleFilename: 'assets/images/[hash][ext][query]'
   },
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.jsx'],
     alias: {
       '@utils': path.resolve(__dirname, 'src/utils/'),
       '@components': path.resolve(__dirname, 'src/component/'),
@@ -37,7 +37,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.m?js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: { loader: 'babel-loader' }
       },
@@ -82,7 +82,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new BundleAnalyzerPlugin({
       analyzerMode: 'server',
-      openAnalyzer: true
+      openAnalyzer: false
     })
   ]
 }
