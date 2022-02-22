@@ -1,0 +1,12 @@
+{
+  "name": "trivia_challenge",
+  "version": "1.0.0",
+  "description": "Trivia Challenge is an app that you'll show a series of questions of general culture.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["HTML", "CSS", "JavaScript", "NPM", "Webpack", "React", "Jest", "Enzime"],
+  "author": "Diego Fernando Rojas Quintero <diegorojas431@gmail.com>",
+  "license": "MIT"
+}
