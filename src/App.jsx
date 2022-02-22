@@ -1,16 +1,19 @@
-import React, { useEffect } from 'react';
-import { getData } from './utils/getData';
+import React, { useState } from 'react';
+import { Intro } from './components/Intro';
 
 export const App = () => {
 
-  useEffect(() => {
-    getData()
-      .then(console.log)
-  }, [])
+  const [isBeginning, setIsBeginning] = useState(false)
+
+  const handleClick = () => setIsBeginning(true)
 
   return (
     <>
-      <h1>Hello World!!!</h1>
+      {
+        isBeginning
+          ? <h1>Comenzar Pruebas</h1>
+          : <Intro handleClick={handleClick}/>
+      }
     </>
   )
 }
