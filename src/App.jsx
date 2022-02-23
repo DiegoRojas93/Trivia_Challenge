@@ -23,8 +23,10 @@ export const App = () => {
   }, []);
 
   const handleStart = () => setIsBeginning(true)
-  const handleAgain = () => setIsBeginning()
-
+  const handleAgain = () => {
+    setResults([])
+    setIsBeginning(false)
+  }
   return (
     <>
       {

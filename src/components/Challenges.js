@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
+import { Challenge } from './Challenge';
 
 
 export const Challenges = ({ data, setResults, results, handleAgain }) => {
@@ -10,29 +11,26 @@ export const Challenges = ({ data, setResults, results, handleAgain }) => {
     setLevel(level + 1)
   }
 
-  const { loading, questions } = data;
+
+  const { questions } = data;
+
+  // let numResults = results.map( r => {
+  //   if (r.respUser === false) continue
+  //   if (r.respUser === true) return true
+  // })
+
+  // console.log(numResults.length);
 
   return (
     <div className='question'>
 
       {
-        !loading && level <= 9
-          ? (
-              <>
-                <h1>{questions[level].category}</h1>
-                <h2>{questions[level].question}</h2>
-                <h3>{`Level ${level + 1}/10`}</h3>
-                <div>
-                  <button onClick={() => handleClick(true)}>True</button>
-                  <button onClick={() => handleClick(false)}>False</button>
-                </div>
-              </>
-            )
+        level <= 9
+          ? <Challenge data={data} handleClick={handleClick} level={level} />
           : (
               <>
                 <h1>You Score</h1>
                 <h2>{`${'ggg'}/10`}</h2>
-                
                 <button onClick={ handleAgain }>Play Again</button>
               </>
           )
