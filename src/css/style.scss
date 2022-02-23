@@ -1,8 +1,8 @@
-*, *::after, *::before {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+// *, *::after, *::before {
+//   box-sizing: border-box;
+//   margin: 0;
+//   padding: 0;
+// }
 
 body {
   width: 100vw;
@@ -38,6 +38,7 @@ body {
   align-items: center;
   background-color: aliceblue;
 }
+
 .question__container {
   width: inherit;
   height: inherit;
@@ -45,4 +46,4 @@ body {
   flex-flow: inherit inherit;
   justify-content: inherit;
   align-items: inherit;
-};
+}

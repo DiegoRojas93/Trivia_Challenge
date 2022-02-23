@@ -1,37 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Challenges } from './components/Challenges';
 import { Intro } from './components/Intro';
 
-import { getData } from '@utils/getData';
+import { useInfoApp } from './hooks/useInfoApp';
 
 export const App = () => {
 
-  const [isBeginning, setIsBeginning] = useState(false)
-  const [results, setResults] = useState([])
+  const [ results, isBeginning, setResults, handleStart, handleAgain ] = useInfoApp()
 
-  const [ data, setData] = useState({
-    loading: true,
-    questions: []
-  });
-
-  useEffect(() => {
-    getData()
-      .then( data => setData({
-        loading: false,
-        questions: data
-      }));
-  }, []);
-
-  const handleStart = () => setIsBeginning(true)
-  const handleAgain = () => {
-    setResults([])
-    setIsBeginning(false)
-  }
   return (
     <>
       {
         isBeginning
-          ? <Challenges data={data} setResults={setResults} results={results} handleAgain={handleAgain}/>
+          ? <Challenges results={results} setResults={setResults} handleAgain={handleAgain} />
           : <Intro handleStart={handleStart}/>
       }
     </>
