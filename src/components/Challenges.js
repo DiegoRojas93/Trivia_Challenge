@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Challenge } from './Challenge';
-import { Results } from './Results';
+import { Challenge } from '@components/Challenge';
+import { Results } from '@components/Results';
 
-import { useChallenges } from '../hooks/useChallenges';
+import { useChallenges } from '@hooks/useChallenges';
 
 
 export const Challenges = ({ setResults, results, handleAgain }) => {

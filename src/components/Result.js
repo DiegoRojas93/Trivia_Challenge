@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { htmlDecode } from '../utils/htmlDecode';
+import { htmlDecode } from '@utils/htmlDecode';
 
 
 export const Result = ({ result }) => (

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Result } from './Result';
+import { Result } from '@components/Result';
 
 
 export const Results = ({ results, handleAgain }) => {

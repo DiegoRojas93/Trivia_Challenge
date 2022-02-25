@@ -1,7 +1,7 @@
 # Trivia_Challenge
 Hello everyone, this project is created from a motionsoft technical test.
 
-I invite you to play and enjoy its deployment on http
+I invite you to play and enjoy its deployment on [https://triviachallengemotion.netlify.app/](https://triviachallengemotion.netlify.app/)
 
 ![Prueba Front-end Motion](https://imgur.com/ZAe4AlH.jpg "Prueba Front-end Motion")
 
@@ -42,7 +42,7 @@ npm start
 
 ## Deployment 📦
 
-You can see the project in the following link
+You can see the project in the following [link](I%20invite%20you%20to%20play%20and%20enjoy%20its%20deployment%20on%20https://triviachallengemotion.netlify.app/)
 
 ## Construido con 🛠️
 
@@ -65,4 +65,4 @@ Please read [CONTRIBUTING.md]() for details of our code of conduct, and the proc
 
 ## Licencia 📄
 
-This project is licensed under the (Diego Rojas) License - see the file [LICENSE.md](LICENSE.md) for details
+This project is licensed under the (Diego Rojas) License - see the file [LICENSE.md](LICENSE.md) for details.

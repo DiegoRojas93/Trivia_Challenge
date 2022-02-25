@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { Challenges } from './components/Challenges';
-import { Intro } from './components/Intro';
+import { Challenges } from '@components/Challenges';
+import { Intro } from '@components/Intro';
 
-import { useInfoApp } from './hooks/useInfoApp';
+import { useInfoApp } from '@hooks/useInfoApp';
+
 
 export const App = () => {
 
