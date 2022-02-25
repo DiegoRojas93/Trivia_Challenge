@@ -1,8 +1,9 @@
 import React from 'react';
-import { useChallenges } from '../hooks/useChallenges';
+
 import { Challenge } from './Challenge';
 import { Results } from './Results';
 
+import { useChallenges } from '../hooks/useChallenges';
 
 
 export const Challenges = ({ setResults, results, handleAgain }) => {
@@ -10,7 +11,7 @@ export const Challenges = ({ setResults, results, handleAgain }) => {
   const [ data, level, handleClick ] = useChallenges( setResults )
 
   return (
-    <div className='question'>
+    <>
 
       {
         level <= 9
@@ -18,6 +19,6 @@ export const Challenges = ({ setResults, results, handleAgain }) => {
           : <Results results={results} handleAgain={handleAgain} />
       }
 
-    </div>
+    </>
   )
 }

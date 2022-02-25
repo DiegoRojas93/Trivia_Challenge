@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { Result } from './Result';
+
 
 export const Results = ({ results, handleAgain }) => {
 
@@ -8,15 +10,15 @@ export const Results = ({ results, handleAgain }) => {
   })
 
   return (
-    <>
+    <div className='results'>
       <h1>You Score</h1>
-      <h2>{`${numResults.length}/10`}</h2>
+      <h2 className='score'>{`${numResults.length}/10`}</h2>
       <ol>
         {
           results.map( r => <li key={ r.question }> <Result result={r} /> </li> )
         }
       </ol>
       <button onClick={ handleAgain }>Play Again</button>
-    </>
+    </div>
   )
 }

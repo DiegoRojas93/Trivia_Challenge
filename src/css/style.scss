@@ -1,22 +1,145 @@
-// *, *::after, *::before {
-//   box-sizing: border-box;
+// ! reset
 
-// }
+:root {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {display: none;}
+
+@font-face {
+  font-family: 'ARCO';
+  src: url('../assets/Fonts/ARCO.ttf') format('trueType');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'modeka';
+  src: url('../assets/Fonts/modeka-webfont.woff2') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+
+$color-main: rgb(59, 0, 168);
+$color-secondary: #ff2c82;
+$color-tertiary: yellow;
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'modeka';
+  display: block;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'ARCO';
+  font-size: 3.2rem;
+  color: $color-main;
+  margin-block-start: 1.072rem;
+  margin-block-end: 1.072rem;
+}
+
+h2 {
+  font-size: 2.4rem;
+  margin-block-start: 1.328rem;
+  margin-block-end: 1.328rem;
+}
+
+h3 {
+  font-size: 1.872rem;
+  margin-block-start: 1.6rem;
+  margin-block-end: 1.6rem;
+}
+
+h4 {
+  font-size: 1.6rem;
+  margin-block-start: 1.5428em;
+  margin-block-end: 1.5728em;
+}
+
+h5 {
+  font-size: 1.368em;
+  margin-block-start: 2.752481927710843rem;
+  margin-block-end: 2.752481927710843rem;
+}
+
+h6 {
+  font-size: 1.072em;
+  margin-block-start: 3.728rem;
+  margin-block-end: 3.728rem;
+}
+
+p {
+  display: block;
+  font-family: 'modeka';
+  font-size: 1.6rem;
+  margin-block-start: 1.6rem;
+  margin-block-end: 1.6rem;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+a {
+  font-size: 1.6rem;
+  margin-block-start: 1.6rem;
+  margin-block-end: 1.6rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+small {
+  font-size: smaller;
+}
+
+::marker {
+  font-family: 'modeka';
+  font-size: 1.872rem;
+  font-weight: bold;
+}
+
+
+
+// ! size smartphones
+
 
 body {
   width: 100vw;
   height: 100vh;
+  padding: 1rem;
+  max-height: max-content;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url('../assets/Images/Flare.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 #root {
   width: 100%;
   height: 100%;
   display: inherit;
+  padding: 2rem;
   justify-content: inherit;
   align-items: inherit;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(1rem);
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
 }
 
 .intro {
@@ -28,21 +151,112 @@ body {
   align-items: center;
 }
 
-.question {
+
+.challenges {
   width: 100%;
   height: 100%;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  background-color: aliceblue;
 }
 
-.question__container {
-  width: inherit;
-  height: inherit;
-  display: inherit;
-  flex-flow: inherit inherit;
-  justify-content: inherit;
-  align-items: inherit;
+.results {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  text-align: center;
+}
+
+.score{
+  color: $color-secondary;
+}
+
+li {
+  animation: shows linear 1s;
+  -webkit-animation: shows linear 1s;
+}
+
+.success {
+  text-align: left;
+  &:before {
+    content: '';
+    display: block;
+    background: url("../assets/Icons/check.png") no-repeat;
+    width: 1.872rem;
+    height: 1.872rem;
+    float: left;
+    margin: 0 0.6rem 0 0;
+  }
+}
+
+.fail {
+  text-align: left;
+  &:before {
+    content: '';
+    display: block;
+    background: url("../assets/Icons/times.png") no-repeat;
+    width: 1.872rem;
+    height: 1.872rem;
+    float: left;
+    margin: 0 0.6rem 0 0;
+  }
+}
+
+.buttons {
+  height: 25%;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+button {
+  height: 5rem;
+  width: 80%;
+  background-color: transparent;
+  color: $color-secondary;
+  font-family: 'ARCO';
+  font-size: 2.2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  border: 0.2rem solid $color-main;
+  border-radius: 2rem;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+
+  &:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+  }
+
+  &:active {
+    border: 0.2rem solid $color-main;
+    background-color: $color-main;
+    color: yellow;
+  }
+}
+
+@keyframes shows {
+  from {opacity: 0}
+  to {opacity: 100}
+}
+
+
+
+// ! sizes major
+
+
+@media only screen and (min-width: 700px) {
+  #root {
+    width: 50%;
+    height: 80%;
+  }
 }

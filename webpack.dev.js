@@ -16,10 +16,10 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
-      '@utils': path.resolve(__dirname, 'src/utils/'),
       '@components': path.resolve(__dirname, 'src/component/'),
       '@styles': path.resolve(__dirname, 'src/css/'),
-      '@images': path.resolve(__dirname, 'src/utils/images/')
+      '@images': path.resolve(__dirname, 'src/utils/images/'),
+      '@utils': path.resolve(__dirname, 'src/utils/')
     }
   },
   mode: 'development',
@@ -66,7 +66,7 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset/resource',
+        type: 'asset/resource'
       }
     ]
   },
@@ -82,7 +82,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new BundleAnalyzerPlugin({
       analyzerMode: 'server',
-      openAnalyzer: false
+      openAnalyzer: true
     })
   ]
 }

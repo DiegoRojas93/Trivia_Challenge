@@ -16,10 +16,10 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
-      '@utils': path.resolve(__dirname, 'src/utils/'),
       '@components': path.resolve(__dirname, 'src/component/'),
       '@styles': path.resolve(__dirname, 'src/css/'),
-      '@images': path.resolve(__dirname, 'src/utils/images/')
+      '@images': path.resolve(__dirname, 'src/utils/images/'),
+      '@utils': path.resolve(__dirname, 'src/utils/')
     }
   },
   mode: 'production',

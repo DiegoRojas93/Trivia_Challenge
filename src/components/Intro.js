@@ -1,5 +1,6 @@
-import propTypes from 'prop-types'
-import React from 'react'
+import React from 'react';
+import propTypes from 'prop-types';
+
 
 export const Intro = ({ handleStart }) => {
   return (
